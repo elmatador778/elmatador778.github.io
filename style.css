@@ -2,13 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --border: #30363d;
+  --bg: #0a0e14;
+  --surface: #111820;
+  --surface2: #161d26;
+  --border: #1e2a38;
   --accent: #58a6ff;
   --accent2: #3fb950;
-  --text: #e6edf3;
-  --muted: #8b949e;
+  --hw: #e8a83e;        /* hardware / orange accent */
+  --hw-dim: rgba(232,168,62,0.15);
+  --hw-border: rgba(232,168,62,0.25);
+  --text: #cdd9e5;
+  --muted: #768390;
   --red: #f85149;
   --yellow: #d29922;
   --green: #3fb950;
@@ -24,6 +28,11 @@ body {
   font-family: var(--font-sans);
   min-height: 100vh;
   line-height: 1.6;
+  /* subtle PCB-style grid */
+  background-image:
+    linear-gradient(rgba(88,166,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(88,166,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* ── NAV ──────────────────────────────────────────────────── */
@@ -35,15 +44,15 @@ nav {
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  background: rgba(13,17,23,0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(10,14,20,0.94);
+  backdrop-filter: blur(10px);
   z-index: 100;
 }
 
 .logo {
   font-family: var(--font-mono);
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--hw);
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -54,7 +63,7 @@ nav {
   height: 32px;
   width: auto;
   filter: brightness(0) invert(1);
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 .nav-links {
@@ -69,12 +78,12 @@ nav {
   font-size: 0.9rem;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: var(--hw); }
 
 .lang-toggle {
   background: var(--surface);
-  color: var(--accent);
-  border: 1px solid var(--border);
+  color: var(--hw);
+  border: 1px solid var(--hw-border);
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
   font-family: var(--font-mono);
@@ -82,7 +91,7 @@ nav {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-.lang-toggle:hover { background: var(--accent); color: var(--bg); }
+.lang-toggle:hover { background: var(--hw); color: var(--bg); }
 
 /* ── HERO ─────────────────────────────────────────────────── */
 #hero {
@@ -95,12 +104,12 @@ nav {
 
 .terminal-window {
   width: 100%;
-  max-width: 640px;
+  max-width: 680px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(232,168,62,0.06);
 }
 
 .terminal-bar {
@@ -108,7 +117,7 @@ nav {
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1rem;
-  background: #1c2128;
+  background: #0d1520;
   border-bottom: 1px solid var(--border);
 }
 
@@ -132,7 +141,7 @@ nav {
 .terminal-body {
   padding: 1.5rem;
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.97rem;
 }
 
 .line {
@@ -151,6 +160,11 @@ nav {
   padding-left: 1.2rem;
 }
 
+.hw-orange {
+  color: var(--hw) !important;
+  font-weight: 600;
+}
+
 .tagline { color: var(--text) !important; font-style: italic; }
 
 .blink {
@@ -161,7 +175,7 @@ nav {
 
 /* ── SECTIONS ─────────────────────────────────────────────── */
 section {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
@@ -172,7 +186,7 @@ section {
   margin-bottom: 0.5rem;
   color: var(--text);
 }
-.section-title .prompt { color: var(--accent); }
+.section-title .prompt { color: var(--hw); }
 
 .section-sub {
   color: var(--muted);
@@ -180,7 +194,99 @@ section {
   margin-bottom: 2rem;
 }
 
+/* ── SKILLS SECTION ───────────────────────────────────────── */
+#skills { border-top: 1px solid var(--border); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.skill-group-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--hw);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+}
+
+.skill-icon { font-size: 1rem; }
+
+/* skill bars */
+.skill-bars { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  min-width: 110px;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--hw) 0%, #f0c060 100%);
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+/* protocol / tool badges */
+.protocol-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proto-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--hw-dim);
+  color: var(--hw);
+  border: 1px solid var(--hw-border);
+}
+
+.proto-badge.hw {
+  background: rgba(63,185,80,0.1);
+  color: var(--accent2);
+  border-color: rgba(63,185,80,0.2);
+}
+
+.proto-badge.tool {
+  background: rgba(88,166,255,0.1);
+  color: var(--accent);
+  border-color: rgba(88,166,255,0.2);
+}
+
 /* ── PROJECT CARDS ────────────────────────────────────────── */
+#projects { border-top: 1px solid var(--border); }
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -197,7 +303,13 @@ section {
 }
 .card:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 16px rgba(88,166,255,0.1);
+  box-shadow: 0 0 18px rgba(88,166,255,0.08);
+}
+
+/* hardware-focused card gets orange glow */
+.card.card-hw:hover {
+  border-color: var(--hw);
+  box-shadow: 0 0 18px rgba(232,168,62,0.12);
 }
 
 .card-header {
@@ -210,12 +322,18 @@ section {
 .card-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  background: rgba(88,166,255,0.15);
+  background: rgba(88,166,255,0.12);
   color: var(--accent);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.tag-hw {
+  background: var(--hw-dim);
+  color: var(--hw);
+  border: 1px solid var(--hw-border);
 }
 
 .card-title {
@@ -251,11 +369,11 @@ section {
 .badge {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  background: rgba(63,185,80,0.12);
+  background: rgba(63,185,80,0.1);
   color: var(--accent2);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid rgba(63,185,80,0.2);
+  border: 1px solid rgba(63,185,80,0.18);
 }
 
 /* ── ABOUT ────────────────────────────────────────────────── */
@@ -274,7 +392,7 @@ section {
 .about-text p {
   color: var(--muted);
   font-size: 0.92rem;
-  line-height: 1.75;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
@@ -285,7 +403,7 @@ section {
 .tag-label {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--accent);
+  color: var(--hw);
   width: 100%;
   margin-bottom: 0.2rem;
 }
@@ -341,12 +459,12 @@ section {
 
 .btn-download {
   display: inline-block;
-  background: var(--accent);
+  background: var(--hw);
   color: var(--bg);
   text-decoration: none;
   padding: 0.6rem 1.4rem;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   transition: opacity 0.2s;
 }
@@ -379,13 +497,14 @@ footer {
   color: var(--muted);
   text-decoration: none;
 }
-.footer-contact a:hover { color: var(--accent); }
-.accent { color: var(--accent); font-family: var(--font-mono); }
+.footer-contact a:hover { color: var(--hw); }
+.accent { color: var(--hw); font-family: var(--font-mono); }
 
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 600px) {
   nav { padding: 0.75rem 1rem; }
   #hero { padding: 1rem; min-height: auto; padding-top: 3rem; }
-  .terminal-body { font-size: 0.85rem; }
+  .terminal-body { font-size: 0.82rem; }
   section { padding: 3rem 1rem; }
+  .skills-grid { grid-template-columns: 1fr; }
 }

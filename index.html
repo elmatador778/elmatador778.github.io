@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tsiky Andrianarisata — Portfolio</title>
+  <title>Tsiky Andrianarisata — Embedded Systems Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,6 +16,7 @@
     </span>
     <div class="nav-links">
       <a href="#about"    data-en="About"    data-fr="À propos">About</a>
+      <a href="#skills"   data-en="Skills"   data-fr="Compétences">Skills</a>
       <a href="#projects" data-en="Projects" data-fr="Projets">Projects</a>
       <a href="#resume"   data-en="Resume"   data-fr="CV">Resume</a>
       <button class="lang-toggle" onclick="toggleLang()">FR</button>
@@ -36,17 +37,23 @@
         <p class="line output name-line">Tsiky Andrianarisata</p>
 
         <p class="line"><span class="prompt">$</span> <span class="cmd">cat role.txt</span></p>
-        <p class="line output"
-           data-en="Engineering Student — CESI Toulouse"
-           data-fr="Étudiant Ingénieur — CESI Toulouse">Engineering Student — CESI Toulouse</p>
+        <p class="line output hw-orange"
+           data-en="Embedded Systems Engineer · CESI Toulouse"
+           data-fr="Ingénieur Systèmes Embarqués · CESI Toulouse">Embedded Systems Engineer · CESI Toulouse</p>
 
         <p class="line"><span class="prompt">$</span> <span class="cmd">cat status.txt</span></p>
         <p class="line output accent-green"
            data-en="🟢 Looking for an apprenticeship (alternance)"
            data-fr="🟢 En recherche d'alternance">🟢 Looking for an apprenticeship (alternance)</p>
 
-        <p class="line"><span class="prompt">$</span> <span class="cmd">cat skills.txt</span></p>
-        <p class="line output">Python · C++ · SQL · Arduino · Embedded Systems · Signal Processing</p>
+        <p class="line"><span class="prompt">$</span> <span class="cmd">cat firmware.txt</span></p>
+        <p class="line output">C · C++ · Python · Arduino · STM32 · FreeRTOS</p>
+
+        <p class="line"><span class="prompt">$</span> <span class="cmd">cat protocols.txt</span></p>
+        <p class="line output">I²C · SPI · UART · CAN · PWM · ADC/DAC</p>
+
+        <p class="line"><span class="prompt">$</span> <span class="cmd">cat tools.txt</span></p>
+        <p class="line output">LTSpice · Fusion 360 · Kicad · GDB · Git · Linux</p>
 
         <p class="line"><span class="prompt">$</span> <span class="cmd blink">_</span></p>
       </div>
@@ -59,9 +66,9 @@
 
     <div class="about-grid">
       <div class="about-text">
-        <p data-en="Passionate about electronic systems and embedded systems, my professional goal is to become a qualified engineer in this field. Currently in my second year of the integrated preparatory cycle at CESI Toulouse, I am looking for an apprenticeship for my engineering degree to strengthen my technical and professional skills."
-           data-fr="Passionné par les systèmes électroniques et les systèmes embarqués, mon projet professionnel est d'obtenir le titre d'ingénieur dans ce domaine. Actuellement en deuxième année de cycle préparatoire intégré au CESI Toulouse, je suis à la recherche d'une alternance pour mon cycle d'ingénieur afin de renforcer mes compétences techniques et professionnelles.">
-          Passionate about electronic systems and embedded systems, my professional goal is to become a qualified engineer in this field. Currently in my second year of the integrated preparatory cycle at CESI Toulouse, I am looking for an apprenticeship for my engineering degree to strengthen my technical and professional skills.
+        <p data-en="Embedded systems engineer in training, passionate about the intersection of hardware and software. I design and program microcontroller-based systems — from bare-metal C/C++ firmware to real-time operating systems — with a strong background in electronics, signal processing, and RF communications. Currently in my second year at CESI Toulouse, seeking an apprenticeship to deepen my expertise in firmware development, PCB design, and real-time embedded applications."
+           data-fr="Ingénieur systèmes embarqués en formation, passionné par l'intersection matériel/logiciel. Je conçois et programme des systèmes à base de microcontrôleurs — du firmware C/C++ bare-metal aux systèmes temps réel — avec de solides bases en électronique, traitement du signal et communications RF. Actuellement en deuxième année au CESI Toulouse, je recherche une alternance pour approfondir mon expertise en développement firmware, conception PCB et applications embarquées temps réel.">
+          Embedded systems engineer in training, passionate about the intersection of hardware and software. I design and program microcontroller-based systems — from bare-metal C/C++ firmware to real-time operating systems — with a strong background in electronics, signal processing, and RF communications. Currently in my second year at CESI Toulouse, seeking an apprenticeship to deepen my expertise in firmware development, PCB design, and real-time embedded applications.
         </p>
 
         <div class="about-tags">
@@ -97,12 +104,132 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title"><span class="prompt">#</span> <span data-en="Technical Skills" data-fr="Compétences Techniques">Technical Skills</span></h2>
+    <p class="section-sub" data-en="Hardware · Firmware · Tools" data-fr="Matériel · Firmware · Outils">Hardware · Firmware · Tools</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-title">
+          <span class="skill-icon">⚙</span>
+          <span data-en="Firmware &amp; Languages" data-fr="Firmware &amp; Langages">Firmware &amp; Languages</span>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-row"><span class="skill-name">C / C++</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Assembly (ARM)</span><div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div></div>
+          <div class="skill-row"><span class="skill-name">Bash / Linux</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">
+          <span class="skill-icon">🔌</span>
+          <span data-en="Protocols &amp; Interfaces" data-fr="Protocoles &amp; Interfaces">Protocols &amp; Interfaces</span>
+        </div>
+        <div class="protocol-badges">
+          <span class="proto-badge">I²C</span>
+          <span class="proto-badge">SPI</span>
+          <span class="proto-badge">UART</span>
+          <span class="proto-badge">CAN bus</span>
+          <span class="proto-badge">PWM</span>
+          <span class="proto-badge">ADC/DAC</span>
+          <span class="proto-badge">GPIO</span>
+          <span class="proto-badge">DMA</span>
+          <span class="proto-badge">RF / Radio</span>
+          <span class="proto-badge">Ethernet</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">
+          <span class="skill-icon">💾</span>
+          <span data-en="MCUs &amp; Platforms" data-fr="MCU &amp; Plateformes">MCUs &amp; Platforms</span>
+        </div>
+        <div class="protocol-badges">
+          <span class="proto-badge hw">STM32</span>
+          <span class="proto-badge hw">Arduino / AVR</span>
+          <span class="proto-badge hw">ESP32</span>
+          <span class="proto-badge hw">Raspberry Pi</span>
+          <span class="proto-badge hw">ARM Cortex-M</span>
+          <span class="proto-badge hw">FreeRTOS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">
+          <span class="skill-icon">🛠</span>
+          <span data-en="Tools &amp; EDA" data-fr="Outils &amp; EDA">Tools &amp; EDA</span>
+        </div>
+        <div class="protocol-badges">
+          <span class="proto-badge tool">LTSpice</span>
+          <span class="proto-badge tool">KiCad</span>
+          <span class="proto-badge tool">Fusion 360</span>
+          <span class="proto-badge tool">GDB / OpenOCD</span>
+          <span class="proto-badge tool">Git</span>
+          <span class="proto-badge tool">Oscilloscope</span>
+          <span class="proto-badge tool">Logic Analyser</span>
+          <span class="proto-badge tool">Multimeter</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PROJECTS / EXPERIENCE -->
   <section id="projects">
     <h2 class="section-title"><span class="prompt">#</span> <span data-en="Projects &amp; Experience" data-fr="Projets &amp; Expériences">Projects &amp; Experience</span></h2>
     <p class="section-sub" data-en="Click a card to expand details." data-fr="Cliquez sur une carte pour afficher les détails.">Click a card to expand details.</p>
 
     <div class="projects-grid">
+
+      <!-- EMBEDDED SYSTEMS -->
+      <div class="card card-hw" onclick="toggleCard(this)">
+        <div class="card-header">
+          <span class="card-tag tag-hw">Firmware · 2025</span>
+          <h3 class="card-title" data-en="Embedded Systems &amp; Microcontrollers" data-fr="Systèmes Embarqués &amp; Microcontrôleurs">Embedded Systems &amp; Microcontrollers</h3>
+          <span class="card-arrow">▼</span>
+        </div>
+        <div class="card-body">
+          <p data-en="Architecture of microcontrollers (ARM Cortex-M, AVR), bare-metal C/C++ firmware development, peripheral drivers (I²C, SPI, UART, GPIO, timers), interrupt handling, and DMA transfers. Applied object-oriented programming in C++ for hardware abstraction layers. Studied real-time operating system concepts (task scheduling, semaphores, queues) and embedded network protocols."
+             data-fr="Architecture des microcontrôleurs (ARM Cortex-M, AVR), développement firmware C/C++ bare-metal, pilotes de périphériques (I²C, SPI, UART, GPIO, timers), gestion des interruptions et transferts DMA. Programmation orientée objet en C++ pour les couches d'abstraction matérielle. Étude des concepts RTOS (ordonnancement, sémaphores, files) et protocoles réseau embarqués.">
+            Architecture of microcontrollers (ARM Cortex-M, AVR), bare-metal C/C++ firmware development, peripheral drivers (I²C, SPI, UART, GPIO, timers), interrupt handling, and DMA transfers. Applied object-oriented programming in C++ for hardware abstraction layers. Studied real-time operating system concepts (task scheduling, semaphores, queues) and embedded network protocols.
+          </p>
+          <div class="card-meta">
+            <span class="badge">C / C++</span>
+            <span class="badge">ARM Cortex-M</span>
+            <span class="badge">Arduino / AVR</span>
+            <span class="badge">FreeRTOS</span>
+            <span class="badge">I²C · SPI · UART</span>
+            <span class="badge">Interrupts / DMA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ELECTRONICS & SIGNAL -->
+      <div class="card card-hw" onclick="toggleCard(this)">
+        <div class="card-header">
+          <span class="card-tag tag-hw">Hardware · 2025</span>
+          <h3 class="card-title" data-en="Electronics &amp; Signal Processing" data-fr="Électronique &amp; Traitement du Signal">Electronics &amp; Signal Processing</h3>
+          <span class="card-arrow">▼</span>
+        </div>
+        <div class="card-body">
+          <p data-en="Analog circuit design: op-amp amplification, active filtering (Butterworth, Chebyshev), power regulation. Radio frequency: modulation schemes, antenna fundamentals, signal chain design. Automatic control: PID tuning, Bode/Nyquist analysis, stability of linear systems. All validated with LTSpice simulations and bench measurements (oscilloscope, signal generator, multimeter)."
+             data-fr="Conception de circuits analogiques : amplification op-amp, filtrage actif (Butterworth, Chebyshev), régulation d'alimentation. Radiofréquence : schémas de modulation, bases des antennes, conception de la chaîne de signal. Automatique : réglage PID, analyse Bode/Nyquist, stabilité des systèmes linéaires. Tout validé par simulations LTSpice et mesures en banc (oscilloscope, générateur de signaux, multimètre).">
+            Analog circuit design: op-amp amplification, active filtering (Butterworth, Chebyshev), power regulation. Radio frequency: modulation schemes, antenna fundamentals, signal chain design. Automatic control: PID tuning, Bode/Nyquist analysis, stability of linear systems. All validated with LTSpice simulations and bench measurements (oscilloscope, signal generator, multimeter).
+          </p>
+          <div class="card-meta">
+            <span class="badge">LTSpice</span>
+            <span class="badge">Op-Amp</span>
+            <span class="badge">PID Control</span>
+            <span class="badge">RF / Modulation</span>
+            <span class="badge">Oscilloscope</span>
+            <span class="badge">Signal Processing</span>
+          </div>
+        </div>
+      </div>
 
       <!-- ONERA INTERNSHIP -->
       <div class="card" onclick="toggleCard(this)">
@@ -112,9 +239,9 @@
           <span class="card-arrow">▼</span>
         </div>
         <div class="card-body">
-          <p data-en="Toulouse, April – June 2026. Developed a complete graphical user interface for the aerospace simulation software CSIPI (Python/PyQt or Java). Created data visualisation modules and post-processing tools. Collaborated closely with researchers and end users."
-             data-fr="Toulouse, avril – juin 2026. Développement d'une interface graphique complète pour le logiciel de simulation aérospatiale CSIPI (Python/PyQt ou Java). Création de modules de visualisation de données et d'outils de post-traitement. Collaboration étroite avec les chercheurs et utilisateurs finaux.">
-            Toulouse, April – June 2026. Developed a complete graphical user interface for the aerospace simulation software CSIPI (Python/PyQt or Java). Created data visualisation modules and post-processing tools. Collaborated closely with researchers and end users.
+          <p data-en="Toulouse, April – June 2026. Developed a complete graphical user interface for the aerospace simulation software CSIPI (Python/PyQt or Java). Created data visualisation modules and post-processing tools for simulation outputs. Collaborated closely with ONERA researchers and end users in an aerospace R&D environment."
+             data-fr="Toulouse, avril – juin 2026. Développement d'une interface graphique complète pour le logiciel de simulation aérospatiale CSIPI (Python/PyQt ou Java). Création de modules de visualisation de données et d'outils de post-traitement. Collaboration étroite avec les chercheurs ONERA et utilisateurs finaux dans un environnement R&D aérospatial.">
+            Toulouse, April – June 2026. Developed a complete graphical user interface for the aerospace simulation software CSIPI (Python/PyQt or Java). Created data visualisation modules and post-processing tools for simulation outputs. Collaborated closely with ONERA researchers and end users in an aerospace R&D environment.
           </p>
           <div class="card-meta">
             <span class="badge">Python</span>
@@ -122,48 +249,6 @@
             <span class="badge">Java</span>
             <span class="badge">GUI</span>
             <span class="badge">Aerospace</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- EMBEDDED SYSTEMS -->
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-          <span class="card-tag">CESI · 2025</span>
-          <h3 class="card-title" data-en="Embedded Systems &amp; Microcontrollers" data-fr="Systèmes Embarqués &amp; Microcontrôleurs">Embedded Systems &amp; Microcontrollers</h3>
-          <span class="card-arrow">▼</span>
-        </div>
-        <div class="card-body">
-          <p data-en="Architecture of microcontrollers, object-oriented programming (C++/Python) applied to hardware, and network protocols. Goal: acquiring dual hardware/software expertise to design complete electronic systems."
-             data-fr="Architecture des microcontrôleurs, programmation orientée objet (C++/Python) appliquée au matériel, et protocoles réseaux. Objectif : acquérir une double compétence hardware/software pour concevoir des systèmes électroniques complets.">
-            Architecture of microcontrollers, object-oriented programming (C++/Python) applied to hardware, and network protocols. Goal: acquiring dual hardware/software expertise to design complete electronic systems.
-          </p>
-          <div class="card-meta">
-            <span class="badge">C++</span>
-            <span class="badge">Python</span>
-            <span class="badge">Arduino</span>
-            <span class="badge">Microcontrollers</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ELECTRONICS & SIGNAL -->
-      <div class="card" onclick="toggleCard(this)">
-        <div class="card-header">
-          <span class="card-tag">CESI · 2025</span>
-          <h3 class="card-title" data-en="Electronics &amp; Signal Processing" data-fr="Électronique &amp; Traitement du Signal">Electronics &amp; Signal Processing</h3>
-          <span class="card-arrow">▼</span>
-        </div>
-        <div class="card-body">
-          <p data-en="In-depth study of electricity and amplification/filtering techniques. Radio frequency and signal processing for communicating systems. Automatic control: PID regulation, stability, and precision of linear systems."
-             data-fr="Étude approfondie de l'électricité et des techniques d'amplification/filtrage. Radiofréquence et traitement du signal pour les systèmes communicants. Automatique : régulation PID, stabilité et précision des systèmes linéaires.">
-            In-depth study of electricity and amplification/filtering techniques. Radio frequency and signal processing for communicating systems. Automatic control: PID regulation, stability, and precision of linear systems.
-          </p>
-          <div class="card-meta">
-            <span class="badge">LTSpice</span>
-            <span class="badge">PID</span>
-            <span class="badge">RF</span>
-            <span class="badge">Signal Processing</span>
           </div>
         </div>
       </div>
